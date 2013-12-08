@@ -203,7 +203,7 @@ void dahlia::decrypt_message_with_rsa(const QByteArray private_key, const QByteA
         Botan::SecureVector<Botan::byte> plaintext = rsa_dec1->decrypt(encrypted_message, sizeof(encrypted_message));
 
         QByteArray result;
-        for (uint i = 0; i < sizeof(plaintext); i++)
+        for (uint i = 0; i < plaintext.size(); i++)
         {
             result[i] = plaintext[i];
         }
